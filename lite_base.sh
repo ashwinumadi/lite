@@ -15,20 +15,20 @@ module load anaconda
 module load cuda/12.1.1
 cd /rc_scratch/asum8093/lite/data/
 
-wget http://nlp.cs.washington.edu/entity_type/data/ultrafine_acl18.tar.gz
+#wget http://nlp.cs.washington.edu/entity_type/data/ultrafine_acl18.tar.gz
 
-tar -xvzf ultrafine_acl18.tar.gz
+#tar -xvzf ultrafine_acl18.tar.gz
 
 echo "== Running Process_Ultrafine.py =="
 python process_ultrafine.py
 
 cd ../
-mkdir output
+#mkdir output
 
 conda activate py38-pt1131-cuda117
 
 echo "== This is the scripting step! =="
 
-!python3 lite.py --data_dir './data/processed_data/' --output_dir './output' --train_batch_size 4 --num_train_epochs 2000 --margin 0.1 --save_epochs 200 --learning_rate 1e-6 --lamb 0.05
+python lite.py --data_dir './data/processed_data/' --output_dir './output' --train_batch_size 4 --num_train_epochs 2000 --margin 0.1 --save_epochs 200 --learning_rate 1e-6 --lamb 0.05
 
 echo "== End of Job =="
