@@ -13,7 +13,7 @@ output_file = './data/processed_data/test_processed.json'
 # Read the original file and get the first 5 lines
 with open(input_file, 'r') as infile:
     lines = infile.readlines()  # Read all lines from the original file
-    trimmed_lines = lines[:100]   # Take the first 5 lines
+    trimmed_lines = lines[:1999]   # Take the first 5 lines
 
 # Write the first 5 lines to a new file
 with open(output_file, 'w') as outfile:

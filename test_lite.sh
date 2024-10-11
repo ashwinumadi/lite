@@ -19,7 +19,7 @@ cd /rc_scratch/asum8093/lite/data/
 echo "== Running Reduced Dataset.py =="
 python process_ultrafine.py
 
-#python reduced_dataset.py
+python reduced_dataset.py
 
 cd ../
 ls
