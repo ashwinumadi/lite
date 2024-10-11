@@ -106,7 +106,7 @@ def main():
    args = parser.parse_args()
 
 
-   dev_dat = load_res(args.dev)
+   dev_dat = load_res(args.test)
 
 
    #test_dat = load_res(args.test)
