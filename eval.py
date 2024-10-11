@@ -93,6 +93,8 @@ def main():
 
     chkpt_path = os.path.join(args.model_dir, 'model')
     chkpt = torch.load(chkpt_path, map_location='cpu')
+    if 'roberta_module.roberta.embeddings.position_ids' in chkpt['model']:
+        del chkpt['model']['roberta_module.roberta.embeddings.position_ids']
     model.load_state_dict(chkpt['model'])
     model.to(device)
     model.eval()
