@@ -1,12 +1,12 @@
 import json
 import os
 
-os.rename('./data/processed_data/dev_processed.json','./data/processed_data/dev_processed2.json' )
+os.rename('./data/processed_data/test_processed.json','./data/processed_data/test_processed2.json' )
 
 
 # Path to the original file and the new file
-input_file = './data/processed_data/dev_processed2.json'
-output_file = './data/processed_data/dev_processed.json'
+input_file = './data/processed_data/test_processed2.json'
+output_file = './data/processed_data/test_processed.json'
 
 
 
