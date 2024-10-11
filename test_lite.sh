@@ -15,13 +15,14 @@ module load anaconda
 module load cuda/12.1.1
 cd /rc_scratch/asum8093/lite/data/
 
-cd /rc_scratch/asum8093/lite/
+
 echo "== Running Reduced Dataset.py =="
 python process_ultrafine.py
 
 #python reduced_dataset.py
 
 cd ../
+ls
 #mkdir output
 
 conda activate py38-pt1131-cuda117
