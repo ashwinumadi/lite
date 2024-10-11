@@ -17,7 +17,11 @@ import argparse
 def eval(args, eval_dataset, model, tokenizer):
     curr_time = time.strftime("%H_%M_%S_%b_%d_%Y", time.localtime())
     eval_sampler = SequentialSampler(eval_dataset)
-    eval_dataloader = DataLoader(eval_dataset, sampler=eval_sampler, batch_size=1, collate_fn=lambda x: zip(*x))
+    #eval_dataloader = DataLoader(eval_dataset, sampler=eval_sampler, batch_size=1, collate_fn=lambda x: zip(*x))
+
+    # eval_dataloader = DataLoader(eval_dataset, sampler=eval_sampler, batch_size=1, collate_fn=lambda x: zip(*x))
+    
+    eval_dataloader = DataLoader(eval_dataset, sampler=eval_sampler, batch_size=args.batch, collate_fn=lambda x: zip(*x))
     type_vocab = eval_dataset.label_lst
 
     eval_res = []
@@ -93,6 +97,7 @@ def main():
 
     chkpt_path = os.path.join(args.model_dir, 'model')
     chkpt = torch.load(chkpt_path, map_location='cpu')
+
     if 'roberta_module.roberta.embeddings.position_ids' in chkpt['model']:
         del chkpt['model']['roberta_module.roberta.embeddings.position_ids']
     model.load_state_dict(chkpt['model'])
