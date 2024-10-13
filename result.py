@@ -118,7 +118,7 @@ def main():
    threshold_champ = 1.0
    all_result = []
    for threshold in np.arange(args.threshold_start, 1.0+args.threshold_step, args.threshold_step):
-       precision, recall, res = macro(dev_dat, threshold, True)
+       precision, recall, res = macro(dev_dat, threshold, False)
        summary = f'Threshold = {round(threshold,3)}\t'\
                  f'{round(round(precision, 3) * 100)}\t' \
                  f'{round(round(recall, 3) * 100)}\t' \
