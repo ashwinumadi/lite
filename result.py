@@ -109,7 +109,7 @@ def main():
    dev_dat = load_res(args.test)
 
 
-   #test_dat = load_res(args.test)
+   test_dat = load_res(args.test)
 
 
    # Loose-macro follow ultra-fine grained entity typing
@@ -136,7 +136,7 @@ def main():
 
    print(f'{"*"*10}\n F1 champ on DEV = {round(f1_champ, 3) * 100} when threshold = {threshold_champ}\n{"*"*10}')
 
-   '''
+   
    print("Eval TEST on Loose Macro Score:")
    precision, recall, res = macro(test_dat, threshold_champ, True)
    summary = f'{round(precision, 3) * 100}\t' \
@@ -144,7 +144,7 @@ def main():
              f'{round(f1(precision, recall), 3) * 100}'
    print(summary)
 
-   '''
+   
    for i in range(5):
        all_result.pop(0)
    # save res file
