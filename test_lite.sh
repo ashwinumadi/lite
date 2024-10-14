@@ -5,7 +5,7 @@
 #SBATCH --time=24:00:00
 #SBATCH --partition=blanca-curc-gpu
 #SBATCH --gres=gpu:1
-#SBATCH --output=lite_test_600-%j.out
+#SBATCH --output=lite_test_600_dev1-%j.out
 #SBATCH --mail-type="ALL"
 #SBATCH --mail-user="asum8093@colorado.edu"
 
