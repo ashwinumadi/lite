@@ -29,7 +29,7 @@ conda activate py38-pt1131-cuda117
 
 echo "== This is the scripting step! =="
 
-#python run.py
+python run.py
 
 #python lite.py --data_dir './data/processed_data/' --output_dir './output' --train_batch_size 4 --num_train_epochs 2000 --margin 0.1 --save_epochs 200 --learning_rate 1e-6 --lamb 0.05
 python eval.py --model_dir "./output/02_11_22_Oct_11_2024_batch4_margin0.1_lr1e-06lambda0.05/epochs600" --eval_data_path "./data/processed_data/test_processed2.json" --type_vocab_file "./data/processed_data/types.txt" --batch 64
